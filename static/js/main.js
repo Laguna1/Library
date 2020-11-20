@@ -14,18 +14,13 @@ function Book(title, author, pages, read) {
   this.read = read
 }
 
-// Book.prototype.info = function() {
-//   let read_status
-//   if(this.read){
-//     read_status = 'read.'
-//   } else {
-//     read_status = 'not read yet.'
-//   }
-//   return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read_status}`
-// }
-
 function addBookToLibrary(book) {
   myLibrary.push(book);
+}
+
+function deleteBookFromLibrary(e) {
+  myLibrary.splice(e.getAttribute('data-id'), 1)
+  displayBooks()
 }
 
 let book1 = new Book('Harry Potter', 'J K Rowlings', 500, true)
@@ -38,6 +33,7 @@ addBookToLibrary(book3)
 
 function displayBooks(){
   let books = ``;
+  let index = 0;
   myLibrary.forEach(book => {
     books +=`
     <div class="book-card">
@@ -45,8 +41,10 @@ function displayBooks(){
       <h4 class="title">Author: <span class="value">${book.author}</span> </h4>
       <h4 class="title">Pages: <span class="value">${book.pages}</span> </h4>
       <h4 class="title">Read: <span class="value">${book.read ? 'Yes' : 'No'}</span> </h4>
+      <button onclick="deleteBookFromLibrary(this)" data-id="${index}">Delete Book</button>
     </div>
-    `;   
+    `; 
+    index++  
   });
   booksDiv.innerHTML = books;
 }
