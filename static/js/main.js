@@ -1,6 +1,10 @@
 let myLibrary = [];
 let booksDiv = document.getElementById('books')
 let newBookForm = document.getElementById('form')
+let newBookTitle = document.getElementById('title')
+let newBookAuthor = document.getElementById('author')
+let newBookPages = document.getElementById('pages')
+let newBookRead = document.getElementById('read')
 
 
 function Book(title, author, pages, read) {
@@ -21,20 +25,19 @@ function Book(title, author, pages, read) {
 // }
 
 function addBookToLibrary(book) {
-  myLibrary.push(book)
+  myLibrary.push(book);
 }
 
 let book1 = new Book('Harry Potter', 'J K Rowlings', 500, true)
 let book2 = new Book('Harry Potter2', 'J K Rowlings', 344, false)
 let book3 = new Book('Harry Potter3', 'J K Rowlings', 260, true)
-
+addBookToLibrary(book1)
+addBookToLibrary(book2)
+addBookToLibrary(book3)
 
 
 function displayBooks(){
-  addBookToLibrary(book1)
-  addBookToLibrary(book2)
-  addBookToLibrary(book3)
-  let books = ``
+  let books = ``;
   myLibrary.forEach(book => {
     books +=`
     <div class="book-card">
@@ -45,10 +48,21 @@ function displayBooks(){
     </div>
     `;   
   });
-  booksDiv.innerHTML = books
+  booksDiv.innerHTML = books;
 }
 
 function showForm() {
-  newBookForm.style.display = 'flex'
-  
+  newBookForm.style.display = 'flex';
+}
+
+function createBook() {
+  let book = new Book (
+    newBookTitle.value,
+    newBookAuthor.value,
+    newBookPages.value,
+    newBookRead.checked
+  );
+  addBookToLibrary(book);
+  newBookForm.style.display = 'none';
+  displayBooks()
 }

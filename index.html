@@ -7,7 +7,7 @@
     <title>Library</title>
 </head>
 <body>
-  <form action="" id="form" class="new-book">
+  <div id="form" class="new-book">
     <label for="title">Title:</label><br>
     <input type="text" id="title" name="title"><br>
     <label for="author">Author:</label><br>
@@ -16,10 +16,10 @@
     <input type="text" id="pages" name="pages"><br>
     <div>
       <label for="read"> I read</label><br>
-      <input type="checkbox" id="read" name="read" value="true"> 
+      <input type="checkbox" id="read" name="read"> 
     </div>
-    <input type="submit" value="Create Book"> 
-  </form>
+    <button onclick="createBook()">Create Book</button>
+  </div>
   
   
 
