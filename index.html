@@ -7,10 +7,27 @@
     <title>Library</title>
 </head>
 <body>
+  <form action="" id="form" class="new-book">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title"><br>
+    <label for="author">Author:</label><br>
+    <input type="text" id="author" name="author"><br>
+    <label for="pages">Pages:</label><br>
+    <input type="text" id="pages" name="pages"><br>
+    <div>
+      <label for="read"> I read</label><br>
+      <input type="checkbox" id="read" name="read" value="true"> 
+    </div>
+    <input type="submit" value="Create Book"> 
+  </form>
   
+  
+
+  <button onclick="showForm()">New book</button>
+
   <div class="flex" id="books">
   </div>
   <button onclick="displayBooks()">Show books</button>
-    <script src="static/js/main.js"></script>
+  <script src="static/js/main.js"></script>
 </body>
 </html>

@@ -1,4 +1,7 @@
 let myLibrary = [];
+let booksDiv = document.getElementById('books')
+let newBookForm = document.getElementById('form')
+
 
 function Book(title, author, pages, read) {
   this.title = title
@@ -25,7 +28,7 @@ let book1 = new Book('Harry Potter', 'J K Rowlings', 500, true)
 let book2 = new Book('Harry Potter2', 'J K Rowlings', 344, false)
 let book3 = new Book('Harry Potter3', 'J K Rowlings', 260, true)
 
-let booksDiv = document.getElementById('books')
+
 
 function displayBooks(){
   addBookToLibrary(book1)
@@ -43,4 +46,9 @@ function displayBooks(){
     `;   
   });
   booksDiv.innerHTML = books
+}
+
+function showForm() {
+  newBookForm.style.display = 'flex'
+  
 }
