@@ -2,15 +2,18 @@
 
 - We have built a small Library App
 
-## BUILT WITH
+## Built With
  - HTML
  - CSS
  - BOOTSTRAP 4
  - Javascript
 
 
+## Live Demo
 
-### Authors
+[Live demo](https://raw.githack.com/Laguna1/Library/library/index.html)
+
+## Authors
 
 👤 **Paul Balitema Kabali**
 - Github: [@pbkabali](https://github.com/pbkabali)
