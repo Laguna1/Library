@@ -13,6 +13,14 @@
 
 [Live demo](https://raw.githack.com/Laguna1/Library/library/index.html)
 
+
+## Installation and Usage
+ - Clone the repository git clone https://github.com/Laguna1/Library
+ - cd Library
+ - Open the html file in your browser
+ - Click on 'new book' button to add new book or change a read-status
+
+
 ## Authors
 
 👤 **Paul Balitema Kabali**
