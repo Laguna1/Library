@@ -37,11 +37,11 @@ function displayBooks(){
   myLibrary.forEach(book => {
     books +=`
     <div class="book-card">
-      <h4 class="title">Title: <span class="value">${book.title}</span> </h4>
-      <h4 class="title">Author: <span class="value">${book.author}</span> </h4>
-      <h4 class="title">Pages: <span class="value">${book.pages}</span> </h4>
-      <h4 class="title">Read: <span class="value">${book.read ? 'Yes' : 'No'}</span> </h4>
-      <button onclick="deleteBookFromLibrary(this)" data-id="${index}">Delete Book</button>
+      <h4 class="title"><span class=" font-weight-bold">Title: </span><span class="value">${book.title}</span> </h4>
+      <h4 class="title"><span class=" font-weight-bold">Author: </span><span class="value">${book.author}</span> </h4>
+      <h4 class="title"><span class=" font-weight-bold">Pages:</span> <span class="value">${book.pages}</span> </h4>
+      <h4 class="title"><span class=" font-weight-bold">Read:</span> <span class="value">${book.read ? 'Yes' : 'No'}</span> </h4>
+      <button onclick="deleteBookFromLibrary(this)" data-id="${index}" class="btn btn-danger my-1">Delete Book</button>
     </div>
     `; 
     index++  
@@ -63,4 +63,8 @@ function createBook() {
   addBookToLibrary(book);
   newBookForm.style.display = 'none';
   displayBooks()
+}
+
+function cancelButton() {
+  newBookForm.style.display = 'none';
 }

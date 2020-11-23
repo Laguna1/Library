@@ -9,12 +9,13 @@ body {
 
 #books {
   justify-content: center;
+  font-weight: bold !important;
 }
 
 .book-card {
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 5px;
+  border: 15px solid lightblue;
+  padding: 40px;
+  border-radius: 55px;
   margin: 10px;
 }
 
@@ -22,9 +23,9 @@ body {
   display: none;
   flex-direction: column;
   width: 300px;
-  border: 1px solid black;
+  border: 15px solid lightblue;
   padding: 25px;
-  border-radius: 5px;
+  border-radius: 25px;
   margin: 10px;
 }
 
