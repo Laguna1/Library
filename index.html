@@ -9,6 +9,13 @@
     <title>Library</title>
 </head>
 <body>
+
+  <div class="h1 text-center my-5">LIBRARY</div>
+
+  <div class="flex" id="books">
+  </div>
+
+  <div class="wrapper">
   <div id="form" class="new-book text-center font-weight-bold">
     <label for="title">Title:</label><br>
     <input type="text" id="title" name="title"><br>
@@ -21,16 +28,13 @@
       <input type="checkbox" id="read" name="read"> 
     </div>
     <button  onclick="cancelButton()" id="cancel" class="btn btn-sm btn-danger my-1">Cancel</button>
-    <button onclick="createBook()" class="btn btn-sm btn-success my-1">Create Book</button>
+    <button onclick="createBook()" class="btn btn-sm btn-success my-1 "">Create Book</button>
   </div>
-  
-  
+</div>
+  <button onclick="showForm()" class="btn btn-sm btn-success my-1">New book</button>
 
-  <button onclick="showForm()">New book</button>
-
-  <div class="flex" id="books">
-  </div>
-  <button onclick="displayBooks()">Show books</button>
+  
+ 
   <script src="static/js/main.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
   integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">

@@ -1,3 +1,7 @@
+window.onload = function () {
+  displayBooks();
+};
+
 let myLibrary = [];
 let booksDiv = document.getElementById('books')
 let newBookForm = document.getElementById('form')

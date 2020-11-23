@@ -19,13 +19,19 @@ body {
   margin: 10px;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .new-book {
   display: none;
   flex-direction: column;
   width: 300px;
   border: 15px solid lightblue;
   padding: 25px;
-  border-radius: 25px;
+  border-radius: 55px;
   margin: 10px;
 }
 
