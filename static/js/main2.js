@@ -1,4 +1,10 @@
 /* eslint-disable*/
+const statusRead = (props) => ({
+  toggleReadStatus: () => {
+    props.read = !props.read;
+  },
+});
+
 const Book = (title, author, pages, read) => {
   const Bok = {
     title,
@@ -6,8 +12,7 @@ const Book = (title, author, pages, read) => {
     pages,
     read,
   };
-  const toggleReadStatus = { read: !read };
-  return { ...Bok, ...toggleReadStatus };
+  return Object.assign(Bok, statusRead(Bok));
 };
 
 const myLibrary = [];
@@ -54,12 +59,12 @@ function displayBooks() {
 window.onload = function () {
   displayBooks();
 };
-let book = Book("Harry Potter", "J K Rowlings", 500, true);
-book = Book("Harry Potter2", "J K Rowlings", 344, false);
-book = Book("Harry Potter3", "J K Rowlings", 260, true);
-addBookToLibrary(book);
-addBookToLibrary(book);
-addBookToLibrary(book);
+let book1 = Book("Harry Potter", "J K Rowlings", 500, true);
+let book2 = Book("Harry Potter2", "J K Rowlings", 344, false);
+let book3 = Book("Harry Potter3", "J K Rowlings", 260, true);
+addBookToLibrary(book1);
+addBookToLibrary(book2);
+addBookToLibrary(book3);
 function deleteBookFromLibrary(e) {
   myLibrary.splice(e.getAttribute("data-id"), 1);
   displayBooks();
