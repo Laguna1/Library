@@ -1,32 +1,22 @@
-// class Book {
-//     constructor(title, author, pages, read) {
-//       this.title = title;
-//       this.author = author;
-//       this.pages = pages;
-//       this.read = read;
-//     }
-//   }
-
-// Book.prototype.toggleReadStatus = function () {
-//   this.read = !this.read;
-// };
-
-//   const Nerd = (name) => {
-//     const prototype = Person(name)
-//     const doSomethingNerdy = () => console.log('nerd stuff')
-//     return Object.assign({}, prototype, {doSomethingNerdy})
-//   }
+/* eslint-disable*/
 const Book = (title, author, pages, read) => {
-  const Bok = { title, author, pages, read };
+  const Bok = {
+    title,
+    author,
+    pages,
+    read,
+  };
   const toggleReadStatus = { read: !read };
-  return Object.assign({}, Bok, toggleReadStatus)
-}
+  return { ...Bok, ...toggleReadStatus };
+};
 
 const myLibrary = [];
-
-book1 = Book("Harry Potter", "J K Rowlings", 500, true);
-book2 = Book("Harry Potter2", "J K Rowlings", 344, false);
-book3 = Book("Harry Potter3", "J K Rowlings", 260, true);
+const booksDiv = document.getElementById("books");
+const newBookForm = document.getElementById("form");
+const newBookTitle = document.getElementById("title");
+const newBookAuthor = document.getElementById("author");
+const newBookPages = document.getElementById("pages");
+const newBookRead = document.getElementById("read");
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
@@ -64,7 +54,12 @@ function displayBooks() {
 window.onload = function () {
   displayBooks();
 };
-
+let book = Book("Harry Potter", "J K Rowlings", 500, true);
+book = Book("Harry Potter2", "J K Rowlings", 344, false);
+book = Book("Harry Potter3", "J K Rowlings", 260, true);
+addBookToLibrary(book);
+addBookToLibrary(book);
+addBookToLibrary(book);
 function deleteBookFromLibrary(e) {
   myLibrary.splice(e.getAttribute("data-id"), 1);
   displayBooks();
@@ -94,13 +89,4 @@ function createBook() {
 function cancelButton() {
   newBookForm.classList.toggle("display-none");
 }
-
-const booksDiv = document.getElementById("books");
-const newBookForm = document.getElementById("form");
-const newBookTitle = document.getElementById("title");
-const newBookAuthor = document.getElementById("author");
-const newBookPages = document.getElementById("pages");
-const newBookRead = document.getElementById("read");
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
+/* eslint-enable */
