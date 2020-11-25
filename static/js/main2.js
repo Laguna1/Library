@@ -1,19 +1,15 @@
 /* eslint-disable*/
-const statusRead = (props) => ({
-  toggleReadStatus: () => {
-    props.read = !props.read;
-  },
-});
-
-const Book = (title, author, pages, read) => {
-  const Bok = {
-    title,
-    author,
-    pages,
-    read,
-  };
-  return Object.assign(Bok, statusRead(Bok));
-};
+class Book {
+  constructor(title, author, pages, read) {
+    (this.title = title),
+      (this.author = author),
+      (this.pages = pages),
+      (this.read = read);
+  }
+  toggleReadStatus() {
+    this.read = !this.read;
+  }
+}
 
 const myLibrary = [];
 const booksDiv = document.getElementById("books");
@@ -59,9 +55,9 @@ function displayBooks() {
 window.onload = function () {
   displayBooks();
 };
-let book1 = Book("Harry Potter", "J K Rowlings", 500, true);
-let book2 = Book("Harry Potter2", "J K Rowlings", 344, false);
-let book3 = Book("Harry Potter3", "J K Rowlings", 260, true);
+let book1 = new Book("Harry Potter", "J K Rowlings", 500, true);
+let book2 = new Book("Harry Potter2", "J K Rowlings", 344, false);
+let book3 = new Book("Harry Potter3", "J K Rowlings", 260, true);
 addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
@@ -80,7 +76,7 @@ function showForm() {
 }
 
 function createBook() {
-  const book = Book(
+  const book = new Book(
     newBookTitle.value,
     newBookAuthor.value,
     newBookPages.value,
