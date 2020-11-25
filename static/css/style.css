@@ -1,0 +1,44 @@
+body {
+  padding: 20px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#books {
+  justify-content: center;
+  font-weight: bold !important;
+}
+
+.book-card {
+  border: 15px solid lightblue;
+  padding: 40px;
+  border-radius: 55px;
+  margin: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-book {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 15px solid lightblue;
+  padding: 25px;
+  border-radius: 55px;
+  margin: 10px;
+}
+
+.display-none {
+  display: none;
+}
+
+input {
+  height: 35px;
+}
